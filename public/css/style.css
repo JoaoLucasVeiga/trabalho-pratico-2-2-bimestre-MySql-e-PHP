@@ -1,0 +1,137 @@
+/*******************************************************************************
+ * Curso: Engenharia de Software
+ * Disciplina: Linguagem e Técnicas de Programação
+ * Professor: Flores
+ * Turma: ESOFT-2B
+ * Componentes: (Seus nomes e RAs)
+ * Descritivo: Folha de estilos ATUALIZADA com novos ajustes de layout.
+ ******************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root {
+    --bg-dark: #0d0d1a; --bg-light: #1a1a2e; --primary-purple: #6a0dad;
+    --primary-purple-hover: #8338ec; --text-light: #e0e0e0; --text-dark: #a0a0a0;
+    --border-color: #33334d; --blue-edit: #3498db; --red-delete: #e74c3c;
+}
+body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; margin: 0; }
+
+/* AJUSTE AQUI: Adicionado padding para centralizar o conteúdo */
+.container { max-width: 1200px; margin: 20px auto; padding: 20px 40px; background-color: var(--bg-light); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+.main-header, .main-footer { background-color: var(--bg-light); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
+.main-header h1 a { color: white; text-decoration: none; font-weight: 700; }
+.main-header nav a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s ease; }
+.main-header nav a:hover { color: var(--primary-purple); }
+.main-footer { text-align: center; color: var(--text-dark); border-top: 1px solid var(--border-color); border-bottom: none; justify-content: center; margin-top: 40px; padding: 20px 5%;}
+h2, h3 { color: #ffffff; }
+h2 { border-left: 4px solid var(--primary-purple); padding-left: 15px; margin-bottom: 5px; }
+h3 { margin-bottom: 15px; font-size: 1.4rem; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.page-subtitle { color: var(--text-dark); margin: 0; padding-left: 19px; }
+.btn, .btn-editar, .btn-excluir { display: inline-block; padding: 10px 20px; color: white; border-radius: 5px; text-decoration: none; text-align: center; border: none; cursor: pointer; font-weight: 500; transition: background-color 0.3s ease; }
+.btn { background-color: var(--primary-purple); }
+.btn:hover { background-color: var(--primary-purple-hover); }
+.btn-editar { background-color: var(--blue-edit); padding: 6px 12px; }
+.btn-editar:hover { background-color: #4aa3df; }
+.btn-excluir { background-color: var(--red-delete); padding: 6px 12px; }
+.btn-excluir:hover { background-color: #e95e50; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
+.product-card { background-color: #252538; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,0.4); transition: transform 0.2s ease-in-out; }
+.product-card:hover { transform: translateY(-5px); }
+.product-cover { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-info h4 { font-size: 1rem; margin: 0 0 5px 0; color: var(--text-light); }
+.product-info .platform { font-size: 0.8rem; color: var(--text-dark); margin: 0 0 10px 0; }
+.product-info .price { font-size: 1.1rem; font-weight: bold; color: var(--primary-purple); margin: 0 0 15px 0; margin-top: auto; }
+.actions { display: flex; gap: 10px; }
+.actions a { flex-grow: 1; }
+
+.section-divider { border: none; height: 1px; background-color: var(--border-color); margin: 40px 0; }
+
+form { display: flex; flex-direction: column; gap: 20px; max-width: 700px; }
+label { font-weight: 500; color: var(--text-light); }
+input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-light); box-sizing: border-box; font-size: 16px; }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary-purple); }
+textarea { resize: vertical; }
+
+/* ESTILOS PARA FLASH MESSAGES E ESTADOS VAZIOS */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+.alert-sucesso {
+    background-color: #28a745; /* Verde */
+}
+.alert-erro {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.empty-state {
+    background-color: #252538;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-dark);
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+}
+
+/* ESTILOS PARA BUSCA E PAGINAÇÃO */
+.search-bar {
+    margin-bottom: 30px;
+}
+.search-bar form {
+    display: flex;
+    max-width: 100%;
+}
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+.search-bar button {
+    padding: 0 25px;
+    border: none;
+    background-color: var(--primary-purple);
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.search-bar button:hover {
+    background-color: var(--primary-purple-hover);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.pagination a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #252538;
+    transition: background-color 0.3s ease;
+}
+.pagination a:hover {
+    background-color: var(--primary-purple-hover);
+}
+.pagination a.active {
+    background-color: var(--primary-purple);
+    font-weight: bold;
+}
+
+/* Estilo para a pré-visualização da imagem no form de edição */
+.current-image-preview {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    display: inline-block; /* Faz o container se ajustar ao tamanho da imagem */
+}
