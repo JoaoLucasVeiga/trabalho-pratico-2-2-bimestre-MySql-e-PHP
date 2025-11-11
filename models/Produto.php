@@ -20,7 +20,7 @@ class Produto {
     public function __construct($pdo) { $this->pdo = $pdo; }
 
     // MÉTODO ANTIGO "listar()" FOI SUBSTITUÍDO POR ESTES DOIS
-    public function listarPaginadoEBuscar($termoBusca = '', $limit = 6, $offset = 0) {
+    public function listarPaginadoEBuscar($termoBusca = '', $limit = 10, $offset = 0) {
         $sql = "SELECT p.*, plat.nome AS nome_plataforma 
                 FROM produtos p 
                 JOIN plataformas plat ON p.plataforma_id = plat.id";
