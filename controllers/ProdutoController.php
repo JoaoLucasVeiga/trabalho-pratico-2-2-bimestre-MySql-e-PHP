@@ -4,10 +4,17 @@
  * Disciplina: Linguagem e Técnicas de Programação
  * Professor: Flores
  * Turma: ESOFT-2B
- * Componentes: (Seus nomes e RAs)
+ * Componentes:
+ *     25291090-2 - João Lucas Veiga de Carvalho
+ *     25164719-2 - Rafael Maia
+ *     25033056-2 - Gabriel Michels Cubas
+ *     25001118-2 - Emanuel Gomes de Almeida
+ *     25361613-2 - Arthur Marinho Figueira
+ *     25362639-2 - Roberti Mendes de moura
+ * Descritivo: Responsável por gerenciar as operações de listagem, busca, paginação, criação, edição, atualização, exclusão e upload de imagens de produtos
  ******************************************************************************/
 
-// AS DUAS LINHAS ABAIXO ESTAVAM FALTANDO
+
 require_once __DIR__ . '/../models/Produto.php';
 require_once __DIR__ . '/../models/Plataforma.php';
 
