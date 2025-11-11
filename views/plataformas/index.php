@@ -2,6 +2,7 @@
 
 <div class="page-header">
     <h2>Gerenciamento de Plataformas</h2>
+    <!-- CORREÇÃO AQUI: O link agora aponta para "criar_plataforma" -->
     <a href="index.php?action=criar_plataforma" class="btn">Adicionar Nova Plataforma</a>
 </div>
 

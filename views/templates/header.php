@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
+    <div class="background-wrapper">
+        <!-- Partículas do fundo animado -->
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    </div>
+
     <header class="main-header">
         <h1><a href="index.php">LegendKeys - Admin</a></h1>
         <nav>
@@ -16,12 +24,16 @@
     </header>
     <main class="container">
         <?php
-        // LÓGICA PARA EXIBIR A FLASH MESSAGE
+        // A lógica de mensagens de feedback pode continuar, ela é útil
         if (isset($_SESSION['mensagem'])): ?>
             <div class="alert alert-<?= $_SESSION['mensagem']['tipo'] ?>">
                 <?= $_SESSION['mensagem']['texto'] ?>
             </div>
         <?php
-            unset($_SESSION['mensagem']); // Limpa a mensagem para não aparecer de novo
+            // Precisamos iniciar a sessão para que as mensagens funcionem
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            unset($_SESSION['mensagem']);
         endif;
         ?>

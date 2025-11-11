@@ -4,20 +4,76 @@
  * Professor: Flores
  * Turma: ESOFT-2B
  * Componentes: (Seus nomes e RAs)
- * Descritivo: Folha de estilos ATUALIZADA com novos ajustes de layout.
+ * Descritivo: CSS FINAL com ANIMAÇÃO DE PARTÍCULAS MELHORADA.
  ******************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes move-up { 100% { transform: translateY(-100vh); } }
+
 :root {
     --bg-dark: #0d0d1a; --bg-light: #1a1a2e; --primary-purple: #6a0dad;
     --primary-purple-hover: #8338ec; --text-light: #e0e0e0; --text-dark: #a0a0a0;
     --border-color: #33334d; --blue-edit: #3498db; --red-delete: #e74c3c;
+    --price-green: #2ecc71; 
 }
-body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; margin: 0; }
+body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; margin: 0; overflow-x: hidden; }
 
-/* AJUSTE AQUI: Adicionado padding para centralizar o conteúdo */
-.container { max-width: 1200px; margin: 20px auto; padding: 20px 40px; background-color: var(--bg-light); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+/* --- ANIMAÇÃO DE PARTÍCULAS MELHORADA --- */
+.background-wrapper { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; }
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(224, 224, 224, 0.4); /* Cor mais suave */
+    box-shadow: 0 0 8px rgba(224, 224, 224, 0.3); /* Efeito de brilho */
+    animation: move-up linear infinite;
+    bottom: 0;
+}
+/* Gerando 40 partículas com variações de tamanho, posição, velocidade, delay e opacidade */
+.particle:nth-child(1) { width: 3px; height: 3px; left: 15%; animation-duration: 25s; animation-delay: -3s; opacity: 0.7; }
+.particle:nth-child(2) { width: 2px; height: 2px; left: 22%; animation-duration: 35s; animation-delay: -12s; opacity: 0.5; }
+.particle:nth-child(3) { width: 1px; height: 1px; left: 33%; animation-duration: 45s; animation-delay: -25s; opacity: 0.4; }
+.particle:nth-child(4) { width: 2px; height: 2px; left: 45%; animation-duration: 20s; animation-delay: -5s; opacity: 0.8; }
+.particle:nth-child(5) { width: 3px; height: 3px; left: 58%; animation-duration: 30s; animation-delay: -18s; opacity: 0.6; }
+.particle:nth-child(6) { width: 1px; height: 1px; left: 67%; animation-duration: 28s; animation-delay: -8s; opacity: 0.9; }
+.particle:nth-child(7) { width: 2px; height: 2px; left: 78%; animation-duration: 22s; animation-delay: -15s; opacity: 0.5; }
+.particle:nth-child(8) { width: 3px; height: 3px; left: 85%; animation-duration: 40s; animation-delay: -30s; opacity: 0.7; }
+.particle:nth-child(9) { width: 1px; height: 1px; left: 92%; animation-duration: 18s; animation-delay: -1s; opacity: 0.6; }
+.particle:nth-child(10) { width: 2px; height: 2px; left: 5%; animation-duration: 33s; animation-delay: -22s; opacity: 0.8; }
+.particle:nth-child(11) { width: 3px; height: 3px; left: 98%; animation-duration: 26s; animation-delay: -11s; opacity: 0.4; }
+.particle:nth-child(12) { width: 1px; height: 1px; left: 2%; animation-duration: 38s; animation-delay: -19s; opacity: 0.9; }
+.particle:nth-child(13) { width: 2px; height: 2px; left: 27%; animation-duration: 19s; animation-delay: -2s; opacity: 0.7; }
+.particle:nth-child(14) { width: 1px; height: 1px; left: 49%; animation-duration: 42s; animation-delay: -14s; opacity: 0.5; }
+.particle:nth-child(15) { width: 3px; height: 3px; left: 63%; animation-duration: 23s; animation-delay: -28s; opacity: 0.8; }
+.particle:nth-child(16) { width: 2px; height: 2px; left: 71%; animation-duration: 36s; animation-delay: -7s; opacity: 0.6; }
+.particle:nth-child(17) { width: 1px; height: 1px; left: 88%; animation-duration: 48s; animation-delay: -21s; opacity: 0.4; }
+.particle:nth-child(18) { width: 3px; height: 3px; left: 8%; animation-duration: 21s; animation-delay: -10s; opacity: 0.9; }
+.particle:nth-child(19) { width: 2px; height: 2px; left: 18%; animation-duration: 29s; animation-delay: -29s; opacity: 0.5; }
+.particle:nth-child(20) { width: 1px; height: 1px; left: 38%; animation-duration: 39s; animation-delay: -17s; opacity: 0.7; }
+.particle:nth-child(21) { width: 2px; height: 2px; left: 55%; animation-duration: 24s; animation-delay: -4s; opacity: 0.6; }
+.particle:nth-child(22) { width: 3px; height: 3px; left: 75%; animation-duration: 31s; animation-delay: -13s; opacity: 0.8; }
+.particle:nth-child(23) { width: 1px; height: 1px; left: 83%; animation-duration: 41s; animation-delay: -23s; opacity: 0.5; }
+.particle:nth-child(24) { width: 2px; height: 2px; left: 95%; animation-duration: 17s; animation-delay: -6s; opacity: 0.9; }
+.particle:nth-child(25) { width: 3px; height: 3px; left: 12%; animation-duration: 34s; animation-delay: -16s; opacity: 0.7; }
+.particle:nth-child(26) { width: 1px; height: 1px; left: 25%; animation-duration: 44s; animation-delay: -26s; opacity: 0.4; }
+.particle:nth-child(27) { width: 2px; height: 2px; left: 42%; animation-duration: 27s; animation-delay: -9s; opacity: 0.6; }
+.particle:nth-child(28) { width: 1px; height: 1px; left: 52%; animation-duration: 47s; animation-delay: -20s; opacity: 0.8; }
+.particle:nth-child(29) { width: 3px; height: 3px; left: 68%; animation-duration: 32s; animation-delay: -11s; opacity: 0.5; }
+.particle:nth-child(30) { width: 2px; height: 2px; left: 90%; animation-duration: 26s; animation-delay: -27s; opacity: 0.9; }
+.particle:nth-child(31) { width: 1px; height: 1px; left: 1%; animation-duration: 50s; animation-delay: -14s; opacity: 0.6; }
+.particle:nth-child(32) { width: 3px; height: 3px; left: 9%; animation-duration: 22s; animation-delay: -24s; opacity: 0.7; }
+.particle:nth-child(33) { width: 2px; height: 2px; left: 19%; animation-duration: 37s; animation-delay: -31s; opacity: 0.5; }
+.particle:nth-child(34) { width: 1px; height: 1px; left: 31%; animation-duration: 43s; animation-delay: -2s; opacity: 0.8; }
+.particle:nth-child(35) { width: 2px; height: 2px; left: 47%; animation-duration: 26s; animation-delay: -15s; opacity: 0.6; }
+.particle:nth-child(36) { width: 3px; height: 3px; left: 56%; animation-duration: 34s; animation-delay: -22s; opacity: 0.9; }
+.particle:nth-child(37) { width: 1px; height: 1px; left: 66%; animation-duration: 46s; animation-delay: -6s; opacity: 0.5; }
+.particle:nth-child(38) { width: 2px; height: 2px; left: 77%; animation-duration: 23s; animation-delay: -19s; opacity: 0.7; }
+.particle:nth-child(39) { width: 1px; height: 1px; left: 81%; animation-duration: 49s; animation-delay: -32s; opacity: 0.4; }
+.particle:nth-child(40) { width: 3px; height: 3px; left: 94%; animation-duration: 30s; animation-delay: -10s; opacity: 0.8; }
 
-.main-header, .main-footer { background-color: var(--bg-light); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
+/* O resto do CSS continua igual */
+.container { max-width: 1200px; margin: 20px auto; padding: 20px 40px; background-color: var(--bg-light); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1; position: relative; }
+.main-header, .main-footer { background-color: var(--bg-light); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); z-index: 1; position: relative; }
 .main-header h1 a { color: white; text-decoration: none; font-weight: 700; }
 .main-header nav a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s ease; }
 .main-header nav a:hover { color: var(--primary-purple); }
@@ -27,111 +83,41 @@ h2 { border-left: 4px solid var(--primary-purple); padding-left: 15px; margin-bo
 h3 { margin-bottom: 15px; font-size: 1.4rem; }
 .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .page-subtitle { color: var(--text-dark); margin: 0; padding-left: 19px; }
-.btn, .btn-editar, .btn-excluir { display: inline-block; padding: 10px 20px; color: white; border-radius: 5px; text-decoration: none; text-align: center; border: none; cursor: pointer; font-weight: 500; transition: background-color 0.3s ease; }
+.btn, .btn-editar, .btn-excluir { display: inline-block; padding: 10px 20px; color: white; border-radius: 5px; text-decoration: none; text-align: center; border: none; cursor: pointer; font-weight: 500; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn:hover, .btn-editar:hover, .btn-excluir:hover { transform: scale(1.05); }
 .btn { background-color: var(--primary-purple); }
 .btn:hover { background-color: var(--primary-purple-hover); }
 .btn-editar { background-color: var(--blue-edit); padding: 6px 12px; }
 .btn-editar:hover { background-color: #4aa3df; }
 .btn-excluir { background-color: var(--red-delete); padding: 6px 12px; }
 .btn-excluir:hover { background-color: #e95e50; }
-
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
-.product-card { background-color: #252538; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,0.4); transition: transform 0.2s ease-in-out; }
-.product-card:hover { transform: translateY(-5px); }
+.product-card { background-color: #252538; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,0.4); transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; animation: fadeIn 0.5s ease-out forwards; }
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
 .product-cover { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
 .product-info h4 { font-size: 1rem; margin: 0 0 5px 0; color: var(--text-light); }
 .product-info .platform { font-size: 0.8rem; color: var(--text-dark); margin: 0 0 10px 0; }
-.product-info .price { font-size: 1.1rem; font-weight: bold; color: var(--primary-purple); margin: 0 0 15px 0; margin-top: auto; }
+.product-info .price { font-size: 1.2rem; font-weight: bold; color: var(--price-green); margin: 0 0 15px 0; margin-top: auto; }
 .actions { display: flex; gap: 10px; }
 .actions a { flex-grow: 1; }
-
 .section-divider { border: none; height: 1px; background-color: var(--border-color); margin: 40px 0; }
-
 form { display: flex; flex-direction: column; gap: 20px; max-width: 700px; }
 label { font-weight: 500; color: var(--text-light); }
 input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-light); box-sizing: border-box; font-size: 16px; }
 input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary-purple); }
 textarea { resize: vertical; }
-
-/* ESTILOS PARA FLASH MESSAGES E ESTADOS VAZIOS */
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    color: white;
-    font-weight: 500;
-}
-.alert-sucesso {
-    background-color: #28a745; /* Verde */
-}
-.alert-erro {
-    background-color: #dc3545; /* Vermelho */
-}
-
-.empty-state {
-    background-color: #252538;
-    padding: 20px;
-    text-align: center;
-    color: var(--text-dark);
-    border-radius: 8px;
-    border: 1px dashed var(--border-color);
-}
-
-/* ESTILOS PARA BUSCA E PAGINAÇÃO */
-.search-bar {
-    margin-bottom: 30px;
-}
-.search-bar form {
-    display: flex;
-    max-width: 100%;
-}
-.search-bar input[type="text"] {
-    flex-grow: 1;
-    border-radius: 5px 0 0 5px;
-    border-right: none;
-}
-.search-bar button {
-    padding: 0 25px;
-    border: none;
-    background-color: var(--primary-purple);
-    color: white;
-    cursor: pointer;
-    border-radius: 0 5px 5px 0;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-.search-bar button:hover {
-    background-color: var(--primary-purple-hover);
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 40px;
-}
-.pagination a {
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #252538;
-    transition: background-color 0.3s ease;
-}
-.pagination a:hover {
-    background-color: var(--primary-purple-hover);
-}
-.pagination a.active {
-    background-color: var(--primary-purple);
-    font-weight: bold;
-}
-
-/* Estilo para a pré-visualização da imagem no form de edição */
-.current-image-preview {
-    background-color: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 10px;
-    display: inline-block; /* Faz o container se ajustar ao tamanho da imagem */
-}
+.current-image-preview { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 4px; padding: 10px; display: inline-block; }
+.search-bar { margin-bottom: 30px; }
+.search-bar form { display: flex; max-width: 100%; }
+.search-bar input[type="text"] { flex-grow: 1; border-radius: 5px 0 0 5px; border-right: none; }
+.search-bar button { padding: 0 25px; border: none; background-color: var(--primary-purple); color: white; cursor: pointer; border-radius: 0 5px 5px 0; font-weight: 500; transition: background-color 0.3s ease; }
+.search-bar button:hover { background-color: var(--primary-purple-hover); }
+.pagination { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+.pagination a { color: var(--text-light); text-decoration: none; padding: 10px 15px; border-radius: 5px; background-color: #252538; transition: background-color 0.3s ease; }
+.pagination a:hover { background-color: var(--primary-purple-hover); }
+.pagination a.active { background-color: var(--primary-purple); font-weight: bold; }
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 5px; color: white; font-weight: 500; }
+.alert-sucesso { background-color: #28a745; }
+.alert-erro { background-color: #dc3545; }
+.empty-state { background-color: #252538; padding: 20px; text-align: center; color: var(--text-dark); border-radius: 8px; border: 1px dashed var(--border-color); }
