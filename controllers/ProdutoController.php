@@ -11,7 +11,7 @@
  *     25001118-2 - Emanuel Gomes de Almeida
  *     25361613-2 - Arthur Marinho Figueira
  *     25362639-2 - Roberti Mendes de moura
- * Descritivo: 
+ * Descritivo: Controla todas as operações de produtos.
  ******************************************************************************/
 
 // AS DUAS LINHAS ABAIXO ESTAVAM FALTANDO
