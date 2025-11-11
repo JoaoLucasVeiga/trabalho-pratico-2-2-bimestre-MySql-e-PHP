@@ -27,7 +27,7 @@ class ProdutoController {
     }
 
     public function listar() {
-        define('ITENS_POR_PAGINA', 6);
+        define('ITENS_POR_PAGINA', 10);
         $termoBusca = $_GET['busca'] ?? '';
         $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
         
