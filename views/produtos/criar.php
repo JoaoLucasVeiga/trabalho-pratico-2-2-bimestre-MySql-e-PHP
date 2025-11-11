@@ -1,4 +1,22 @@
-<?php include_once __DIR__ . '/../templates/header.php'; ?>
+<?php
+/*******************************************************************************
+ * Curso: Engenharia de Software
+ * Disciplina: Linguagem e Técnicas de Programação
+ * Professor: Flores
+ * Turma: ESOFT-2B
+ * Componentes:
+ *     25291090-2 - João Lucas Veiga de Carvalho
+ *     25164719-2 - Rafael Maia
+ *     25033056-2 - Gabriel Michels Cubas
+ *     25001118-2 - Emanuel Gomes de Almeida
+ *     25361613-2 - Arthur Marinho Figueira
+ *     25362639-2 - Roberti Mendes de moura
+ * Descritivo: Esse código exibe a view para adicionar um novo produto, contendo um 
+ formulário completo com campos para nome, descrição, preço, imagem de capa e plataforma, 
+ permitindo o upload de arquivos e o envio dos dados ao controlador pela ação salvar_produto.
+ ******************************************************************************/
+
+include_once __DIR__ . '/../templates/header.php'; ?>
 <h2>Adicionar Novo Produto</h2>
 <!-- IMPORTANTE: Adicionado enctype="multipart/form-data" para permitir o upload de arquivos -->
 <form action="index.php?action=salvar_produto" method="POST" enctype="multipart/form-data">
